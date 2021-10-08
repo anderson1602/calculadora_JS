@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <title>Calculadora</title>
+    <style>
+        body{
+            background-color: rgb(160, 181, 202);
+        }
+        input[type=number] {
+            width: 20%; float:center; padding: 0px 0px; background-color: #f7f6f2; color: #000; 
+	cursor: pointer; border-radius:0px 0px 0px 0px;
+        }
+        input[type=button] {
+            width: 10%; float:center; padding: 0px 3px; background-color: #EEDD82; color: #000; 
+	cursor: pointer; border-radius:50px 50px 50px 50px;
+        }
+        div#res{
+            margin-top: 20px;
+            font: normal 18pt Times;
+        }
+        a{
+            color: red;
+        }
+        strong{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando Valores</h1>
+    <input type="number" name="no1" id="no1"> <br></br>
+    <input type="number" name="no2" id="no2"> <br></br>
+    <input type="button" value="Somar" onclick="somar()"> 
+    <input type="button" value="Subtrair" onclick="subtrair()"><hr>
+    <input type="button" value="Multiplicar" onclick="multiplicar()">
+    <input type="button" value="Dividir" onclick="dividir()"> <hr>
+    <div id="res">Resultado = </div>
+    <script> 
+        function somar() {
+            var tn1 = document.getElementById('no1')
+            var tn2 = document.getElementById('no2')
+            var res = document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            if (s < 0){
+               res.innerHTML = ` Resultado = <a>${s}</a>`
+            } else if (s > 0) {
+               res.innerHTML = ` Resultado = <strong>${s}</strong>`
+            } else{
+               res.innerHTML = ` Resultado = ${s}`
+            }
+
+        }
+        function subtrair() {
+            var tn1 = document.getElementById('no1')
+            var tn2 = document.getElementById('no2')
+            var res = document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 - n2
+            if (s < 0){
+               res.innerHTML = ` Resultado = <a>${s}</a>`
+            } else if (s > 0) {
+               res.innerHTML = ` Resultado = <strong>${s}</strong>`
+            } else{
+               res.innerHTML = ` Resultado = ${s}`
+            }
+        }
+        function multiplicar() {
+            var tn1 = document.getElementById('no1')
+            var tn2 = document.getElementById('no2')
+            var res = document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 * n2
+            if (s < 0){
+               res.innerHTML = ` Resultado = <a>${s}</a>`
+            } else if (s > 0) {
+               res.innerHTML = ` Resultado = <strong>${s}</strong>`
+            } else{
+               res.innerHTML = ` Resultado = ${s}`
+            }
+        }
+        function dividir() {
+            var tn1 = document.getElementById('no1')
+            var tn2 = document.getElementById('no2')
+            var res = document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 / n2
+            if (s < 0){
+               res.innerHTML = ` Resultado = <a>${s}</a>`
+            } else if (s > 0) {
+               res.innerHTML = ` Resultado = <strong>${s}</strong>`
+            } else{
+               res.innerHTML = ` Resultado = ${s}`
+            }
+        }
+    </script>
+
+</body>
+</html>
